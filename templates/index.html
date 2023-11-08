@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <ul>
+        {% for i, task in enumerate(tasks) %}
+            <li>
+                {{ task }}
+                <a href="/delete_task/{{ i }}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="/add_task">
+        <input type="text" name="task" placeholder="Nueva tarea" />
+        <button type="submit">Agregar tarea</button>
+    </form>
+</body>
+</html>
