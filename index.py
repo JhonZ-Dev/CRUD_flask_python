@@ -16,3 +16,8 @@ def add_task():
         tasks.append(task)
     return redirect(url_for('index'))
 
+@app.route('/delete_task/<int:index>')
+def delete_task(index):
+    if 0 <= index < len(tasks):
+        del tasks[index]
+    return redirect(url_for('index'))
