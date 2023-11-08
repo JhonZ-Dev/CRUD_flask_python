@@ -21,3 +21,5 @@ def delete_task(index):
     if 0 <= index < len(tasks):
         del tasks[index]
     return redirect(url_for('index'))
+
+
